@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BlocklyTest.iml" filepath="$PROJECT_DIR$/BlocklyTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlocklyDemo.iml" filepath="$PROJECT_DIR$/BlocklyDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/blocklylib-core-release/blocklylib-core-release.iml" filepath="$PROJECT_DIR$/blocklylib-core-release/blocklylib-core-release.iml" />
       <module fileurl="file://$PROJECT_DIR$/blocklylib-vertical-release/blocklylib-vertical-release.iml" filepath="$PROJECT_DIR$/blocklylib-vertical-release/blocklylib-vertical-release.iml" />

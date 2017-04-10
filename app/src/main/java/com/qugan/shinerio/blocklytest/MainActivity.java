@@ -1,6 +1,7 @@
 package com.qugan.shinerio.blocklytest;
 
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.google.blockly.android.AbstractBlocklyActivity;
 import com.google.blockly.android.codegen.CodeGenerationRequest;
@@ -48,15 +49,16 @@ public class MainActivity extends AbstractBlocklyActivity {
     protected List<String> getGeneratorsJsPaths() {
             return JAVASCRIPT_GENERATORS;
     }
-//    CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-//         new   CodeGenerationRequest.CodeGeneratorCallback() {
-//        @Override
-//        public void onFinishCodeGeneration(String s){
-//            String result = runScript(JAVA_CALL_JS_FUNCTION, "Test", new String[] {});
-//            Toast.makeText(MainActivity.this,result,Toast.LENGTH_SHORT).show();
-//        }
-//    };
-CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback = new LoggingCodeGeneratorCallback(this,"MainActivity");
+    CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
+         new   CodeGenerationRequest.CodeGeneratorCallback() {
+        @Override
+        public void onFinishCodeGeneration(String s){
+            JavaScriptUtils.setJavaScript(s);
+            String result = JavaScriptUtils.runScript(MainActivity.this);
+            Toast.makeText(MainActivity.this,result,Toast.LENGTH_SHORT).show();
+        }
+    };
+    //CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback = new LoggingCodeGeneratorCallback(this,"MainActivity");
     @NonNull
     @Override
     protected CodeGenerationRequest.CodeGeneratorCallback getCodeGenerationCallback() {
